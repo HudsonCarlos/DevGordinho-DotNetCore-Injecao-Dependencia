@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="WpfApp1.Paginas.CorpoPagina"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="900">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Teste." Grid.Column="1" Grid.Row="1"/>
+        <Button x:Name="buttonLog"  Content="Click Aqui para Ver o Log"  Height="35" Width="170" Grid.Column="1" Grid.Row="1" Click="ButtonLog_Click"/>
+    </Grid>
+</UserControl>

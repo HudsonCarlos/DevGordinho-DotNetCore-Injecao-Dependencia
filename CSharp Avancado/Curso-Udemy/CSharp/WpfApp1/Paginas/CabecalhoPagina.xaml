@@ -1,0 +1,66 @@
+﻿<UserControl x:Class="WpfApp1.Paginas.CabecalhoPagina"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" Foreground="White"
+      d:DesignHeight="25" d:DesignWidth="900">
+    <Grid Background="#FF4A4B47">
+        <Menu x:Name="menuCabecalho" Height="25" >
+            <MenuItem Header="Serializacao" Height="25">
+                <MenuItem Header="Xml" >
+                    <MenuItem Header="Serializar"  Click="ClickMenu"/>
+                    <MenuItem Header="Deserializar" />
+                </MenuItem>
+                <MenuItem Header="Json" >
+                    <MenuItem Header="Serializar" />
+                    <MenuItem Header="Deserializar" />
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="Topicos Avançados" Height="25">
+                <MenuItem Header="Generics" />
+                <MenuItem Header="Palavras Chave - Var e Dynamic" />
+                <MenuItem Header="Extension Methods" />
+                <MenuItem Header="Nullable" />
+            </MenuItem>
+            <MenuItem Header="Linq e Lambda" Height="25">
+                <MenuItem Header="Conceito" />
+                <MenuItem Header="Com Objeto" />
+                <MenuItem Header="Com Join" />
+                <MenuItem Header="Com Group" />
+            </MenuItem>
+            <MenuItem Header="Delegate e Eventos" Height="25">
+                <MenuItem Header="Delegate" />
+                <MenuItem Header="Eventos" />
+                <MenuItem Header="Delegate - Métodos Anônimo" />
+                <MenuItem Header="Delegate - Entendendo e Aplicando" />
+            </MenuItem>
+            <MenuItem Header="Thread" Height="25">
+                <MenuItem Header="Primeiro Passo" Click="ClickMenu" />
+                <MenuItem Header="Multi Thread" />
+                <MenuItem Header="Em Background" />
+                <MenuItem Header="Recursos compartilhados -Thread Safe" />
+                <MenuItem Header="Identificador único" />
+                <MenuItem Header="Sleep e Join" />
+                <MenuItem Header="AutoResetEvent e ManualResetEvent" />
+            </MenuItem>
+            <MenuItem Header="Task" Height="25">
+                <MenuItem Header="Primeiro Passo" />
+                <MenuItem Header="Executar Métodos" />
+                <MenuItem Header="Execuções Multiplas" />
+            </MenuItem>
+            <MenuItem Header="Atributos e Reflections" Height="25">
+                <MenuItem Header="Atributos" />
+                <MenuItem Header="Validacao Data Annotation" />
+                <MenuItem Header="Reflection" />
+            </MenuItem>
+            <MenuItem Header="Nuget" Height="25">
+                <MenuItem Header="Instalando Ferramentas" />
+                <MenuItem Header="Criando o Projeto" />
+                <MenuItem Header="Criando o Pacote Nuget" />
+                <MenuItem Header="Publicando o Pacote" />
+            </MenuItem>
+        </Menu>
+
+    </Grid>
+</UserControl>

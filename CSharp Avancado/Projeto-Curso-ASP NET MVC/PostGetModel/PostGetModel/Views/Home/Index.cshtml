@@ -1,0 +1,126 @@
+﻿@model PostGetModel.Models.Pessoa
+@{
+    ViewBag.Title = "Site Pessoal";
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <b>Passando informação para a View via ViewData</b>
+        <ul>
+            <li>Id: @ViewData["PessoaId"]</li>
+            <li>Nome: @ViewData["Nome"]</li>
+            <li>Twitter: @ViewData["Twitter"]</li>
+        </ul>
+    </div>
+
+    <div class="col-md-4">
+        <b>Passando informação para a View via ViewBag</b>
+        <ul>
+            <li>Id: @ViewBag.BPessoaId</li>
+            <li>Nome: @ViewBag.BNome</li>
+            <li>Twitter: @ViewBag.BTwitter</li>
+        </ul>
+    </div>
+
+    <div class="col-md-4">
+        <b>Passando informação para a View via ViewTipada</b>
+        <ul>
+            <li>Id: @Model.PessoaId</li>
+            <li>Nome: @Model.Nome</li>
+            <li>Twitter: @Model.Twitter</li>
+        </ul>
+    </div>
+
+    <hr />
+
+    <div class="col-md-4">
+        <form action="Home/Lista" method="post">
+            <fieldset>
+                <legend>Pessoa</legend>
+                <div>
+                    <label for="PessoaId">Código</label>
+                    <input type="text" value="@Model.PessoaId" id="PessoaId" name="PessoaId" />
+                </div>
+
+                <div>
+                    <label for="Nome">Nome</label>
+                    <input type="text" value="@Model.Nome" id="Nome" name="Nome" />
+                </div>
+                <div>
+                    <label for="Twitter">Twitter</label>
+                    <input type="text" value="@Model.Twitter" id="Twitter" name="Twitter" />
+                </div>
+                <p><input type="submit" value="Enviar" /></p>
+            </fieldset>
+        </form>
+    </div>
+
+    <div class="col-md-4">
+        @using (Html.BeginForm("Lista", "Home", FormMethod.Post)) {
+
+            <fieldset>
+                <legend>Pessoa</legend>
+                <div>
+                    @Html.LabelFor(x => x.PessoaId)
+                    @Html.EditorFor(x => x.PessoaId)
+                </div>
+
+                <div>
+                    @Html.LabelFor(x => x.Nome)
+                    @Html.EditorFor(x => x.Nome)
+                </div>
+                <div>
+                    @Html.LabelFor(x => x.Twitter)
+                    @Html.EditorFor(x => x.Twitter)
+                </div>
+                <p><input type="submit" value="Enviar" /></p>
+            </fieldset>
+        }
+    </div>
+    
+    <div class="col-md-4">
+        <form action="Home/ListaGET" method="get">
+            <fieldset>
+                <legend>Pessoa</legend>
+                <div>
+                    <label for="PessoaId">Código</label>
+                    <input type="text" value="@Model.PessoaId" id="PessoaId" name="PessoaId" />
+                </div>
+
+                <div>
+                    <label for="Nome">Nome</label>
+                    <input type="text" value="@Model.Nome" id="Nome" name="Nome" />
+                </div>
+                <div>
+                    <label for="Twitter">Twitter</label>
+                    <input type="text" value="@Model.Twitter" id="Twitter" name="Twitter" />
+                </div>
+                <p><input type="submit" value="Enviar" /></p>
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Getting started</h2>
+        <p>
+            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
+            enables a clean separation of concerns and gives you full control over markup
+            for enjoyable, agile development.
+        </p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Exibir mais &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Get more libraries</h2>
+        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Exibir mais &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Web Hosting</h2>
+        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Exibir mais &raquo;</a></p>
+    </div>
+</div>

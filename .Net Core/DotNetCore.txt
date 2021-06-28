@@ -1,0 +1,21 @@
+Projeto Web MVC
+
+1 - Instalar o SDK do DotNetCore mais atual.
+2 - Abrir o CMD e criar a pasta raiz da aplicação com MKDIR.
+3 - Comando "dotnet new web" para criar projeto.
+4 - Comando "code ." para abrir o VS Code na pasta atual.
+5 - Comando "dotnet add package Microsoft.AspNetCore.Mvc" para instalar o MVC ao projeto
+	- No ConfigureServices(); insira o services.AddMvc();
+	- No Configure(); insira app.UseMvc();
+	
+Tipo de propriedade virtual é utilizado como modificador de um elemento e só terá uma ação quando se estender essa classe e uma propriedade virtual pode ser sobrescrita por uma classe filha.
+Tipo de propriedade	READONLY essa variavel depois de instanciada no contrutor ou receber um valor no construtor ele não poderá mais ser alterada.
+
+--------------------------------------------------------------
+Projeto Desktop
+
+1 - Instalar o SDK do DotNetCore mais atual.
+2 - Abrir o CMD e criar a pasta raiz da aplicação com MKDIR.
+3 - Comando "dotnet new console" para criar projeto.
+
+Consuming Web API(s) In ASP.NET Core MVC Application | CRUD OPERATION USING WEBAPI

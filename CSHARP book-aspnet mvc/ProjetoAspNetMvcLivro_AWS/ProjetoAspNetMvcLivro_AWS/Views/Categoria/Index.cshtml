@@ -1,0 +1,53 @@
+﻿@model IEnumerable<ProjetoLivroAspNetMvc01_2013.Models.Categoria>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Categoria";
+}
+
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="panel-info">
+            @Html.ActionLink(" + Categoria", "Criar", null, new { @class = "btn btn-success" })
+        </div>
+        <br />
+        <div class="panel panel-primary">
+            <div class="panel-heading fonte">
+                Relação de Categoria registrados
+            </div>
+
+            <div class="panel-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.CategoriaId)</th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Nome)
+                            </th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CategoriaId)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Nome)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Editar", "Editar", new { id = item.CategoriaId }) |
+                                    @Html.ActionLink("Detalhes", "Detalhes", new { id = item.CategoriaId }) |
+                                    @Html.ActionLink("Deletar", "Deletar", new { id = item.CategoriaId })
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

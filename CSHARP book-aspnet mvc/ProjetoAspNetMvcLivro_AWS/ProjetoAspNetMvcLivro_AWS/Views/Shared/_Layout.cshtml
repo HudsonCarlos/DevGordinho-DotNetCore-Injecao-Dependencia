@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - ASP.NET MVC 5</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    @Styles.Render("~/content/DataTables/css/dataTables.bootstrap.css")
+
+</head>
+<body>
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("ASP.NET MVC 5", "Index", "Home", null, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Categorias", "Index", "Categoria")</li>
+                    <li>@Html.ActionLink("Fabricantes", "Index", "Fabricante")</li>
+                    <li>@Html.ActionLink("Sobre", "Sobre", "Home")</li>
+                    <li>@Html.ActionLink("Contato", "Contato", "Home")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        <br />
+        @RenderBody()
+        <footer>
+            <div>
+                <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12" align="center">
+                    <span>&copy; @DateTime.Now.Year - By Hudson S. Carlos</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+    @Scripts.Render("~/scripts/DataTables/jquery.dataTables.js")
+    @Scripts.Render("~/scripts/DataTables/dataTables.bootstrap.js")
+
+    @RenderSection("scripts", required: false)    
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.table').dataTable( {"order": [[1, "asc"]]} );
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+﻿@model IEnumerable<ProjetoLivroAspNetMvc01_2013.Models.Fabricante>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Fabricante";
+}
+
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="panel-info">
+            @Html.ActionLink(" + Fabricante", "Criar", null, new { @class = "btn btn-success" })
+        </div>
+        <br />
+        <div class="panel panel-primary">
+            <div class="panel-heading fonte">
+                Relação de Categoria registrados
+            </div>
+
+            <div class="panel-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <td width="5%" data-step="9" data-intro="" data-position="left">@Html.DisplayNameFor(model => model.FabricanteId)</td>
+                            <td width="5%" data-step="9" data-intro="" data-position="left">@Html.DisplayNameFor(model => model.Nome)</td>
+                            <td width="5%" data-step="9" data-intro="" data-position="left">Ações</td>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.FabricanteId)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Nome)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Editar", "Editar", new { id = item.FabricanteId }, new { @class = "btn btn-info btn-xs" })
+                                    @Html.ActionLink("Detalhes", "Detalhes", new { id = item.FabricanteId }, new { @class = "btn btn-info btn-xs" })
+                                    @Html.ActionLink("Deletar", "Deletar", new { id = item.FabricanteId }, new { @class = "btn btn-info btn-xs" })
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

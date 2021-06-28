@@ -1,0 +1,23 @@
+﻿@model IEnumerable<PostGetModel.Models.Noticia>
+@{
+    ViewBag.Title = "Categoria";
+}
+
+<h2>Categoria: @ViewBag.Categoria</h2>
+<div>
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li>
+                @Html.ActionLink(item.Titulo, "MostraNoticia", "Home", new
+           {
+               @noticiaId = item.NoticiaId,
+               @categoria = item.Categoria,
+               @titulo = item.Categoria
+           }, null)
+                <em>@Html.DisplayFor(x => item.Categoria)</em>
+                <b>@Html.DisplayFor(x => item.Data)</b>
+            </li>
+        }
+    </ul>
+</div>

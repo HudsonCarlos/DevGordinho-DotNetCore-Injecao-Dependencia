@@ -1,0 +1,46 @@
+﻿@model ProjetoLivroAspNetMvc01_2013.Models.Fabricante
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Fabricante";
+}
+
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <span>Criar novo Fabricante</span>
+            </div>
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="panel-body">
+                    <div class="form-horizontal">
+                        @Html.ValidationSummary(true, "")
+
+                        <div class="form-group">
+                            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-6">
+                                @Html.LabelFor(model => model.Nome, new { @class = "control-label" })
+                                @Html.TextBoxFor(model => model.Nome, "", new { @class = "form-control", placeholder = "Digite o nome." })
+                                @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        @Html.ActionLink("Voltar", "Index", null, new { @class = "btn btn-default" })
+                        <input type="submit" value="Salvar" class="btn btn-primary active" />
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@Styles.Render("~/Scripts/jquery-1.10.2.min.js")
+@Styles.Render("~/Scripts/jquery.validate.min.js")
+@Styles.Render("~/Scripts/jquery.validate.unobtrusive.min.js")
+
